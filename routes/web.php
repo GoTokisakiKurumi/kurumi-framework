@@ -1,12 +1,8 @@
 <?php
 
-use App\Core\Route;
+use kurumi\framework\route\Route;
+use kurumi\framework\route\View;
 
-Route::get('/', function () {
-  return '<h1>page home</h1>';
+Route::get("/", function () {
+  View::render("home", []);
 });
-
-Route::get('/about', function () {
-  return '<h1>page about</h1>';
-});
-
