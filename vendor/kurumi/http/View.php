@@ -1,8 +1,8 @@
 <?php
 
-namespace kurumi\framework\route;
+namespace Kurumi\Route;
 
-require "vendor/kurumi/framework/resource/resource.php";
+require "vendor/kurumi/resource/resource.php";
 
 class View
 {

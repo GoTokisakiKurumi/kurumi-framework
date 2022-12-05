@@ -1,6 +1,6 @@
 <?php
 
-namespace kurumi\framework\route;
+namespace Kurumi\Route;
 
 class Route
 {
@@ -13,7 +13,7 @@ class Route
    * Get method
    * ini adalah http  get method
    */
-  public static function get(string $paths, mixed $callback)
+  public static function get(string $paths, callable $callback)
   {
     foreach ([$paths] as $path) {
       if (strlen($path) >= 2) {
