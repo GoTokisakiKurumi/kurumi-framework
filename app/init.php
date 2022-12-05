@@ -1,5 +1,7 @@
 <?php
 
-require_once '../app/Core/App.php';
-require_once '../app/Core/Controller.php';
-require_once '../app/Core/Route.php';
+spl_autoload_register(function ($class) {
+  $class = explode('\\', $class);
+  $class = end($class);
+  require_once __DIR__ . '/Core/' . $class . '.php';
+});
