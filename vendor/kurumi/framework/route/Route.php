@@ -25,7 +25,7 @@ class Route
     $uri = $_SERVER['REQUEST_URI'];
     foreach (self::$routes as $path => $callback) {
       if ($uri !== $path) continue;
-      $callback();
+      return $callback();
     }
   }
 }
