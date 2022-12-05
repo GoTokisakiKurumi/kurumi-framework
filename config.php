@@ -15,6 +15,6 @@ return [
 
   /**
  * username database kalian
- * defaulnya 
+ * defaulnya
  */
 ];

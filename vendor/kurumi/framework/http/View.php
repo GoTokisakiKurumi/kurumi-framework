@@ -2,9 +2,10 @@
 
 namespace kurumi\framework\route;
 
+require "vendor/kurumi/framework/resource/resource.php";
+
 class View
 {
-
   /**
    * method untuk render html
    */

@@ -5,20 +5,31 @@ namespace kurumi\framework\route;
 class Route
 {
 
-  // routes
   private static $routes = [];
 
+  private static $url;
+
   /**
-   * method get
+   * Get method
+   * ini adalah http  get method
    */
-  public static function get(string $path, callable $callback)
+  public static function get(string $paths, mixed $callback)
   {
+    foreach ([$paths] as $path) {
+      if (strlen($path) >= 2) {
+        self::$url = rtrim($path, "/");
+      }
+    }
+
+    self::$routes[self::$url] = $callback;
     self::$routes[$path] = $callback;
+
     self::run();
   }
 
   /**
-   * fungsi run buat meng execute program dari web.php
+   * Run method
+   * ini adalah method yang dimana program di eksekusi
    */
   private static function run()
   {
