@@ -10,6 +10,6 @@ class View
    */
   public static function render(string $filename, $data = [])
   {
-    require_once dirname(__FILE__) . "..\\..\\..\\..\\..\\public\\views\\" . $filename . ".php";
+    require_once "./public/views/" . $filename . ".php";
   }
 }
