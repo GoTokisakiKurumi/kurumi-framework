@@ -1,7 +1,10 @@
 <?php
 
-class Controller {
-  public function view($view, $data =[])
+namespace App\Controller;
+
+class Controller
+{
+  public function view($view, $data = [])
   {
     require_once '../views/' . $view . '.php';
   }
