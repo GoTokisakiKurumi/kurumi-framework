@@ -1,5 +1,13 @@
 <?php
+spl_autoload_register(function ($class) {
+  $class = explode('\\', $class);
+  $class = end($class);
+  require_once './vendor/kurumi/http/' . $class . '.php';
+});
 
-require "vendor/kurumi/http/Route.php";
-require "vendor/kurumi/http/View.php";
-require "routes/web.php";
+/*
+  | harus dibawah bre nyeimpen nya kalau di atas
+  | si function spl_autoload_register ngak jalan 
+ */
+
+require_once './routes/web.php';
