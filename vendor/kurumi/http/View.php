@@ -11,6 +11,15 @@ class View
    */
   public static function render(string $filename, $data = [])
   {
-    require_once "./public/views/" . $filename . ".php";
+    if (!file_exists("./public/views/" . $filename . ".php")) {
+      die(self::errorHandling());
+    } else {
+      require_once "./public/views/" . $filename . ".php";
+    }
+  }
+
+  public static function errorHandling()
+  {
+    echo 'file tidak di temukan, silahkan coba lgi :v';
   }
 }
