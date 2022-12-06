@@ -2,7 +2,7 @@
 
 namespace Kurumi\Route;
 
-require "vendor/kurumi/resource/resource.php";
+require_once "vendor/kurumi/resource/resource.php";
 
 class View
 {
@@ -12,14 +12,18 @@ class View
   public static function render(string $filename, $data = [])
   {
     if (!file_exists("./public/views/" . $filename . ".php")) {
-      die(self::errorHandling());
+      self::errorFileHandling($filename);
     } else {
       require_once "./public/views/" . $filename . ".php";
     }
   }
 
-  public static function errorHandling()
+  /**
+   *  method untuk menampilkan pesan error 
+   */
+  public static function errorFileHandling($filename)
   {
-    echo 'file tidak di temukan, silahkan coba lgi :v';
+    $message = "trying to access a file that doesn't exist.";
+    require_once "./vendor/kurumi/handling/message/index.php";
   }
 }
